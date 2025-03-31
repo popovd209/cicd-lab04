@@ -4,7 +4,7 @@ node {
         checkout scm
     }
     stage('Build image') {
-       app = docker.build("popovd209/cicd-lab04")
+       app = docker.build("popovd1/cicd-lab04")
     }
     stage('Push image') {   
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {

@@ -1,5 +1,11 @@
 node {
     def app
+    stage('Check Branch') {
+        if (env.BRANCH_NAME != 'dev') {
+            echo "Skipping build as this is not the 'dev' branch"
+            return
+        }
+    }
     stage('Clone repository') {
         checkout scm
     }
